@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Indie+Flower|Shadows+Into+Light|Pacifico|Covered+By+Your+Grace|Chewy|Amatic+SC|Coming+Soon|Rock+Salt|Homemade+Apple|Reenie+Beanie' rel='stylesheet' type='text/css'>
+	<title>You are the Monster Ludum Dare 33 Entry</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<style>
+		body{
+			font-family: 'Shadows Into Light','Covered By Your Grace','Indie Flower';
+		}
+		p{
+			font-family: 'Reenie Beanie';
+		}
+		h1{
+			margin:10px 30px 10px 30px;
+		/*	color: #666; */
+			color:#009;
+		}
+
+		#header h1, #header h1{
+			width:25%;
+		}
+
+		#fg, #bg, #header,#footer,#game-over,#terrain{
+			position:absolute;
+		}
+
+		#header, #footer{
+			background-color:rgba(255,255,255,.8);
+			width:100%;
+		}
+
+		#game-over{
+			display: none;
+			width: 100%;
+			top: 15%;
+			text-align: center;
+		}
+		#game-over div {
+			background-color:rgba(255,255,255,.8);
+			border: 1px dashed black;
+			width: 33%;
+			margin: auto;
+			padding-bottom: 20px;
+		}
+		#game-over h1{
+			text-align:center;
+			font-size:50px; 
+			color: red;
+		}
+
+		#header{
+			border-bottom:1px dashed black;
+		}
+		#footer{
+			bottom:0px;
+			border-top:1px dashed black;
+		}
+	</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<canvas id="terrain"></canvas>
+<canvas id="fg"></canvas>
+<div id="header">
+	<h1 style="float:left;">AntHill</h1>
+	<h1 style="float:right;text-align:right">LUDUM DARE 33</h1>
+	<h1 id="countdown" style="margin:10px auto;text-align:center"></h1>
+</div>
+<div id="footer">
+	<h1 id="pts" style="float:left;">0 Pts</h1>
+	<h1 style="float:right;text-align: right">HEYitsLEO</h1>
+	<h1 id="instruction" style="margin:10px auto;text-align:center">Click to Start</h1>
+</div>
+<div id="game-over">
+	<div>
+		<h1>Game Over</h1>
+		<h2>Total Score <span id="game-over-score"></span>pts</h2>
+		<img src="monster-dead.png" />
+		<br />
+		<button id="try-again-btn">Try Again</button>
+	</div>
+</div>
+<audio id="bgm" src="anthill-bgm.ogg" autoplay></audio>
+<audio id="building-dmg-audio" src="Hit_Hurt.wav"></audio>
+<audio id="kill-human-audio" src="Pickup_Coin3.wav"></audio>
+<audio id="building-explosion-audio" src="Explosion.wav"></audio>
+<audio id="powerup-audio" src="Powerup.wav"></audio>
+<div style="visibility:hidden">
+	<canvas id="sprite-canvas" width="500" height="500"></canvas>
+	<img id="monster-img" src="monster.png" />
+	<img id="monster-dead-img" src="monster-dead.png" />
+	<img id="human-img" src="human.png" />
+	<img id="building-1-img" src="building-1.png" />
+	<img id="building-2-img" src="building-2.png" />
+	<img id="building-3-img" src="building-3.png" />
+	<img id="building-4-img" src="building-4.png" />
+	<img id="building-5-img" src="building-5.png" />
+	<img id="stone-img" src="stone.png" />
+	<img id="spear-img" src="spear.png" />
+	<img id="tree-1-img" src="tree-1.png" />
+	<img id="tree-2-img" src="tree-2.png" />
+</div>
+<script src="jquery.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
